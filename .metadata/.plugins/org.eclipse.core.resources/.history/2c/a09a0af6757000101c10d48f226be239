@@ -1,0 +1,45 @@
+package com.proj.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.proj.models.Question;
+import com.proj.services.QestionService;
+@CrossOrigin(origins = "http://127.0.0.1:5500")
+@RestController
+@RequestMapping("question")
+public class QuestionController {
+	@Autowired
+	QestionService questionService;
+	
+	@GetMapping("allQuestions")
+	public ResponseEntity<List<Question>> getAllQuestion() {
+		return questionService.getAllQuestion();
+	}
+	
+	@GetMapping("category/{cat}")
+	public ResponseEntity<List<Question>> getByCatagory(@PathVariable("cat") String catagory){
+		return questionService.getByCatagory(catagory);
+	}
+	
+	@PostMapping("addQuestion")
+	public ResponseEntity<String> addQuestion(@RequestBody Question q) {
+		return questionService.addQuestion(q);
+	}
+	
+	@PostMapping("generate")
+	public ResponseEntity<List<Integer>> generateQuestions(@R)
+	
+
+
+}
