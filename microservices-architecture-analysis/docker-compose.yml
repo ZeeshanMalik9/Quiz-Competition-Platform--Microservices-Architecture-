@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - eureka-server
+      - question-service
+      - quiz-service
+
+  eureka-server:
+    build:
+      context: ./eureka-server
+      dockerfile: Dockerfile
+    ports:
+      - "8761:8761"
+
+  question-service:
+    build:
+      context: ./question-service
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - eureka-server
+
+  quiz-service:
+    build:
+      context: ./quiz-service
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    depends_on:
+      - eureka-server
+
+networks:
+  default:
+    driver: bridge
+
+volumes:
+  db-data:
+    driver: local
