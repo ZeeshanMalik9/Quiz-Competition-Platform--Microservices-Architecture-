@@ -20,11 +20,6 @@ public class QuizController {
     @Autowired
     private QuizeService quizeService;
 
-
-
-
-
-
     @PostMapping("/create")
     public ResponseEntity<String> createQuiz(@RequestBody QuizDTO quizDTO) {
         return quizeService.createQuiz(quizDTO.getCatagory(), quizDTO.getTitle(),quizDTO.getNumQuestions());

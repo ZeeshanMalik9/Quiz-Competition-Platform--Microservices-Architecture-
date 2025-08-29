@@ -24,12 +24,7 @@ public class Question {
 //    private List<Quiz> quizzes;
 //	
 	
-	public String getDifficultylevel() {
-		return difficultylevel;
-	}
-	public void setDifficultylevel(String difficultylevel) {
-		this.difficultylevel = difficultylevel;
-	}
+
 
 	public int getId() {
 		return id;

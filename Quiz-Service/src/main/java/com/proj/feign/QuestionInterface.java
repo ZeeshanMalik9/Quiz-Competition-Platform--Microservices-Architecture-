@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.proj.models.Response;
 import com.proj.models.WrapperQuestions;
 
-@FeignClient("QUESTION-SEVICSE1")
+@FeignClient("QUESTION-SEVICSE")
 public interface QuestionInterface {
 	@GetMapping("question/generate")
 	public ResponseEntity<List<Integer>> generateQuestions(@RequestParam("catagory") String catagory,@RequestParam("numberOfQuestion") Integer numberOfQuestion);
