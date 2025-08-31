@@ -148,6 +148,4 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 ---
 
-## 📄 License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
