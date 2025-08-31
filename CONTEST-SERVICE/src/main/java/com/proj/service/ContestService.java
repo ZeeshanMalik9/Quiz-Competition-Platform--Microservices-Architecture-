@@ -124,7 +124,7 @@ public class ContestService {
 		Contest contest = contestRepository.findById(contestId)
 				.orElseThrow(()-> new RuntimeException("Contest not found with ID: "+contestId));
 		
-		if(!contest.getCreatedAt().equals(requesterId)) {
+		if(!contest.getCreatorId().equals(requesterId)) {
 			throw new SecurityException("Only the contest creator is allowed to start the contest...! ");
 		}
 		
